@@ -1,0 +1,10 @@
+<button mat-icon-button *ngIf="authService.isLogged()">
+    <button mat-button [matMenuTriggerFor]="menu">
+        <img mat-card-avatar src="{{loggedArtist.photo}}" width="35" height="35">
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/sketchs">Sketchs</button>
+        <button mat-menu-item (click)="authService.clearUser()" routerLink="/login">
+            Logout {{authService.loggedUser()}}</button>
+    </mat-menu>
+</button>
